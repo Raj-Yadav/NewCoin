@@ -839,7 +839,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 0.35 * 24 * 60 * 60; // NewCoin: 0.35 days
+static const int64 nTargetTimespan = 10 * 30; // NewCoin: 5 minutes
 static const int64 nTargetSpacing = 15; // NewCoin: 15 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
@@ -2030,13 +2030,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1400539822;
+        block.nTime    = 1489994599;
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 2086299649;
 
         if (fTestNet)
         {
-            block.nTime    = 1399574511;
+            block.nTime    = 1489994599;
             block.nNonce   = 386402991;
         }
 
